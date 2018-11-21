@@ -62,12 +62,13 @@ class API {
   }
 
   static addPokemon (obj) {
-    return fetch(API.baseURL + `/pokemons/new`, {
+    const token = localStorage.getItem('token')
+    return fetch(API.pokemonsURL/ + 'new', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': `Bearer ${localStorage.token}`
+        'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify(obj)
     })
