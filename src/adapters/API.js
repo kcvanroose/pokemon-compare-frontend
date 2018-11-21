@@ -140,7 +140,7 @@ class API {
   }
 }
 
-API.baseURL = 'http://localhost:3000/api/v1'
+API.baseURL = 'https://pokemon-compare.herokuapp.com/api/v1'
 
 API.registerURL = API.baseURL + '/register'
 API.loginURL = API.baseURL + '/login'
