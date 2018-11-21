@@ -29,6 +29,7 @@ class NewPokemon extends React.Component {
     }
 
     handleSubmit = (event) => {
+      event.preventDefault()
       const pokemonData = {
         name: this.state.name,
         nickname: this.state.nickname,
