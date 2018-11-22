@@ -63,7 +63,6 @@ class API {
 
   static addPokemon (obj) {
     const token = localStorage.getItem('token')
-    debugger
     return fetch(API.pokemonsURL + '/new', {
       method: 'POST',
       headers: {

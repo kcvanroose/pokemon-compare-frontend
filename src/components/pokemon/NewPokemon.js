@@ -1,6 +1,7 @@
 import React from 'react'
 import API from '../../adapters/API'
 import PokemonNames from '../../PokemonNames'
+import { withRouter } from 'react-router-dom'
 
 class NewPokemon extends React.Component {
     state= {
@@ -45,12 +46,13 @@ class NewPokemon extends React.Component {
       }
       API.addPokemon(pokemonData)
       .then(data => {
-        if (data.error) {
+        
           console.log(data)
-        } else {
+      
           this.closeForm(event)
+          this.props.history.push('/pokemon')
         }
-      })
+      )
     }
 
     closeForm = (event) => {
@@ -121,4 +123,4 @@ class NewPokemon extends React.Component {
     }
 }
 
-export default NewPokemon
+export default withRouter(NewPokemon)
